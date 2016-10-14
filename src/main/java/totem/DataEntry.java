@@ -16,7 +16,7 @@ public class DataEntry {
 	@PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.CLUSTERED, ordering = Ordering.ASCENDING)
 	private long time;
 
-	@Column
+	@PrimaryKeyColumn(ordinal = 2, type = PrimaryKeyType.CLUSTERED)
 	private String model;
 
 	@Column
