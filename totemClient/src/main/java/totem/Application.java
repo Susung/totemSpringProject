@@ -27,12 +27,9 @@ public class Application {
 			DataEntry entry;
 			RestTemplate restTemplate = new RestTemplate();
 			DataEntry result;
-			int count = 0;//10329352
-			//9000 emonpi
-			//1000 raspberrypi1
+			int count = 0;
+			
 			while ((nextLine = reader.readNext()) != null) {
-				if(count == 1000) break;
-				if(nextLine[0].equals("raspberrypi1")) {
 					System.out.println(count);
 					count++;
 					System.out.println(nextLine[0]);
@@ -40,7 +37,6 @@ public class Application {
 					System.out.print("Sent : " + entry.toString());
 					result = restTemplate.postForObject(uri, entry, DataEntry.class);
 					System.out.println("success");
-				}
 			 }
 			 
 			 result = restTemplate.postForObject(end, "end", DataEntry.class);
