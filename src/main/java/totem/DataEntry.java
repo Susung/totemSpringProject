@@ -1,5 +1,7 @@
 package totem;
 
+import java.util.Date;
+
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.Column;
@@ -18,23 +20,37 @@ public class DataEntry {
 
 	@PrimaryKeyColumn(ordinal = 2, type = PrimaryKeyType.CLUSTERED)
 	private String model;
-
-	@Column
-	private int amp;
 	
 	@Column
-	private int voltage;
+	private String type;
+
+	@Column
+	private double amp;
+	
+	@Column
+	private double voltage;
 	
 	public DataEntry() {
 	}
 	
-	public DataEntry(String model, String date, long time, int amp, int voltage) {
+	public DataEntry(String model, String date, String type, long time, double amp, double voltage) {
+		Date temp = new Date(time);
 		this.model = model;
 		this.date = date;
 		this.time = time;
 		this.amp = amp;
 		this.voltage = voltage;
+		this.type = type;
 	}
+	
+	public String getType() {
+		return type;
+	}
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 
 	public String getDate() {
 		return date;
@@ -60,19 +76,19 @@ public class DataEntry {
 		this.model = model;
 	}
 	
-	public int getAmp() {
+	public double getAmp() {
 		return amp;
 	}
 	
-	public void setAmp(int amp) {
+	public void setAmp(double amp) {
 		this.amp = amp;
 	}
 	
-	public int getVoltage() {
+	public double getVoltage() {
 		return voltage;
 	}
 	
-	public void setVoltage(int voltage) {
+	public void setVoltage(double voltage) {
 		this.voltage = voltage;
 	}
 	
@@ -81,7 +97,7 @@ public class DataEntry {
 	return "{model="+model+",date="+date+",time="+time+",amp="+amp+",voltage="+voltage+"}";
 	}
 	
-	@Override
+	/*@Override
 	public boolean equals(Object obj) {
 		if (this == obj) return true;
 		if (obj == null || getClass() != obj.getClass()) return false;
@@ -106,6 +122,6 @@ public class DataEntry {
 		result = prime * result + amp;
 		result = prime * result + voltage;
 		return result;
-	}
+	}*/
 }
 

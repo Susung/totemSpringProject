@@ -10,25 +10,21 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.EmbeddedId;
 
 @Entity
-@Table
+@Table(name = "graph")
 public class GraphData {
 
 	@EmbeddedId
 	private DataKey datakey;
 
 	@NotNull
-	private int amp;
-	
-	@NotNull
-	private int voltage;
+	private double watt;
 
 	public GraphData() {
 	}
 	
-	public GraphData(Date date, String model, int amp, int voltage) {
+	public GraphData(Date date, String model, double watt) {
 		this.datakey = new DataKey(date, model);
-		this.amp = amp;
-		this.voltage = voltage;
+		this.watt = watt;
 	}
 	
 	public DataKey getDataKey() {
@@ -39,20 +35,12 @@ public class GraphData {
 		this.datakey = datakey;
 	}
 	
-	public int getAmp() {
-		return amp;
+	public double getWatt() {
+		return watt;
 	}
 	
-	public void setAmp(int amp) {
-		this.amp = amp;
-	}
-	
-	public int getVoltage() {
-		return voltage;
-	}
-	
-	public void setVoltage(int voltage) {
-		this.voltage = voltage;
+	public void setWatt(double watt) {
+		this.watt = watt;
 	}
   
 }
