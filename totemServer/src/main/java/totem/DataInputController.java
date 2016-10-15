@@ -81,7 +81,7 @@ public class DataInputController {
 	 * If a data on another interval comes, calculate the average of watt in
 	 * existing interval and save it to mysql and delete the interval.
 	 * then, create a new interval of the new data
-	 *----Detailed explanation in on the wiki
+	 *
 	 */	
 	private HashMap<String,Bin> bins = new HashMap<String,Bin>();
 	
