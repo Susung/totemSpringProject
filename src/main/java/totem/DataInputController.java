@@ -2,6 +2,12 @@ package totem;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+
+import totem.cassandra.DataEntryRepository;
+import totem.cassandra.DataEntry;
+import totem.mysql.GraphData;
+import totem.mysql.DataDAO;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.ui.Model;
 @RestController
 public class DataInputController {
 
@@ -21,6 +27,14 @@ public class DataInputController {
 	
 	@Autowired
 	private DataDAO datadao;
+	
+	@RequestMapping("/mapping")
+	public Model greeting(@RequestParam(value="m") String m, Model model) {
+		List<GraphData> data = datadao.findAll();
+		model.addAttribute("graph", data);
+		model.addAttribute("m", m);
+		return model;
+	}	
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public ResponseEntity<DataEntry> enter(@RequestBody DataEntry de) {

@@ -1,4 +1,4 @@
-package totem;
+package totem.mysql;
 
 import java.util.Date;
 

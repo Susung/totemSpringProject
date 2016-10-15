@@ -1,4 +1,4 @@
-package totem;
+package totem.cassandra;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

@@ -1,4 +1,4 @@
-package totem;
+package totem.cassandra;
 
 import java.util.Date;
 
