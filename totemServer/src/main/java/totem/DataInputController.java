@@ -3,6 +3,7 @@ package totem;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Iterator;
 
 import totem.cassandra.DataEntryRepository;
 import totem.cassandra.DataEntry;
@@ -30,8 +31,14 @@ public class DataInputController {
 	
 	@RequestMapping("/mapping")
 	public Model greeting(@RequestParam(value="m") String m, Model model) {
-		List<GraphData> data = datadao.findAll();
-		model.addAttribute("graph", data);
+		List<GraphData> d = datadao.findAll();
+		Iterator<GraphData> itr = d.iterator();
+		while (itr.hasNext()) {
+			if(!itr.next().getDataKey().getModel().equals(m)) {
+				itr.remove();
+			}
+		}
+		model.addAttribute("graph", d);
 		model.addAttribute("m", m);
 		return model;
 	}	

@@ -33,9 +33,22 @@
 						text: [[${m}]]
 					},
 					xAxis: {
+						title: {
+							text: 'Date'
+						},
 						categories: x
 					},
-
+					legend: {
+						layout: 'vertical',
+						align: 'right',
+						verticalAlign: 'middle',
+						borderWidth: 0
+					},
+					yAxis: {
+						title: {
+							text: 'Watts'
+		            }		
+					},
 					plotOptions: {
 						series: {
 							connectNulls: true

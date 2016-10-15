@@ -22,6 +22,11 @@ public class GraphData {
 	public GraphData() {
 	}
 	
+	public GraphData(DataKey datakey, double watt) {
+		this.datakey = datakey;
+		this.watt = watt;
+	}
+	
 	public GraphData(Date date, String model, double watt) {
 		this.datakey = new DataKey(date, model);
 		this.watt = watt;
