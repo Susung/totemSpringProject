@@ -1,2 +1,0 @@
-# totemSpringProject
-Assignment from TotemPower
