@@ -5,8 +5,8 @@ This project uses spring boot 1.4.1, Java 1.8, Cassandra 2.2.8, MySQL 5.7 and bu
 
 ## How to Run
 Before running, the server needs to have :
-  Cassandra 2.x
-  MySQL
+  ,Cassandra 2.x
+  ,MySQL
   Oracle Java 1.8 (Had some problem with OpenJDK)
 
 ### Client
