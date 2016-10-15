@@ -34,7 +34,7 @@ public class DataInputController {
 	public Model greeting(@RequestParam(value="m") String m, Model model) {
 		List<GraphData> d = datadao.findAll();
 		
-		//This part needs a fix. I couldn't get @Queries working on Mysql data repository
+		//This part needs a fix. Couldn't get @Queries working on crud data repository
 		//manually go through all the datasets in mysql and select the rows that are speicified
 		Iterator<GraphData> itr = d.iterator();
 		while (itr.hasNext()) {
@@ -81,8 +81,8 @@ public class DataInputController {
 	 * If a data on another interval comes, calculate the average of watt in
 	 * existing interval and save it to mysql and delete the interval.
 	 * then, create a new interval of the new data
+	 *----Detailed explanation in on the wiki
 	 */	
-	
 	private HashMap<String,Bin> bins = new HashMap<String,Bin>();
 	
 	private class Bin {
