@@ -3,6 +3,7 @@ package totem;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+//Model of the data thats is sent to the server
 public class DataEntry {
 
 	private String date;

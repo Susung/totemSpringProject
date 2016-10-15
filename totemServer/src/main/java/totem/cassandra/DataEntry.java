@@ -8,7 +8,7 @@ import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
 
-
+//data model of the cassandra data entry
 @Table
 public class DataEntry {
 

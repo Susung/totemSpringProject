@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.persistence.EmbeddedId;
 
+//data model for entries in MySQL
 @Entity
 @Table(name = "graph")
 public class GraphData {

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.io.Serializable;
 import javax.persistence.Embeddable;
 
+//Composite Primary key class for MySQL
 @Embeddable
 public class DataKey implements Serializable {
 	private Date date;
