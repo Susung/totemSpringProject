@@ -66,7 +66,7 @@ public class DataInputController {
 	}
 	
 	//when client stops sending
-	//if there is data that has not been put into mysql, 
+	//if there is data interval that has not been put into mysql, 
 	//take the data and put it in the correct interval
 	@RequestMapping(value = "/end", method = RequestMethod.POST)
 	public ResponseEntity<DataEntry> end() {
