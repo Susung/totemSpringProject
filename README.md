@@ -1,7 +1,7 @@
 # totemSpringProject
 Sends each row of data from CSV from client to the server.
 Server then records each data in Cassandra and at the same time, stores average of the data in 15 minute intervals to MySQL.
-This project uses spring boot 1.4.1, Java 1.8, Cassandra 2.2.8, MySQL 5.7 and builds with maven.
+This project uses spring boot 1.4.1 and builds with maven.
 
 ## How to Run
 Before running, the server needs to have :
